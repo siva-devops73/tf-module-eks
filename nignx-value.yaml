@@ -1,0 +1,8 @@
+## https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx: in this link below commands available
+controller:
+  service:
+    targetPorts:
+      http: http
+      https: http
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-type: nlb
