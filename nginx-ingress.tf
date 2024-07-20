@@ -5,7 +5,7 @@ resource "null_resource" "null" {
   }
 
   depends_on = [
-    aws_eks_cluster.cluster
+    aws_eks_cluster.eks
   ]
   provisioner "local-exec" {
     command = <<EOF
