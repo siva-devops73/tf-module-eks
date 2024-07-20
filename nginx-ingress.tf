@@ -12,7 +12,7 @@ resource "null_resource" "null" {
 aws eks update-kubeconfig --name ${var.env}-eks
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
-helm upgarde ingress ingress-nginx/ingress-nginx -f ${path.module}/nginx-values.yaml
+helm upgrade ingress ingress-nginx/ingress-nginx -f ${path.module}/nginx-values.yaml
 EOF
   }
 }
