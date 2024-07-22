@@ -23,3 +23,13 @@ resource "aws_eks_node_group" "nodes" {
     min_size     = var.min_size
   }
 }
+
+### This is used for to connect iam role in amazon and also it is used to access the outside like google
+resource "aws_iam_openid_connect_provider" "cluster_oidc" {
+  client_id_list  = ["sts.amazonaws.com"]
+  thumbprint_list = ["9e99a48a9960b14926bb7f3b02e22da2b0ab7280"]
+  url             = aws_eks_cluster.cluster.identity.0.oidc.0.issuer
+}
+
+
+
