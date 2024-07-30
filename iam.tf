@@ -76,14 +76,18 @@ resource "aws_iam_policy" "sa-policy" {
           "ssm:GetParametersByPath",
           "ssm:GetParameters",
           "ssm:GetParameter",
-          "ssm:DescribeParameters",
           "kms:Decrypt"
         ],
         "Resource":[
           "arn:aws:ssm:us-east-1:904827379241:parameter/roboshop.*",
-          "*",
           var.kms_arn
         ]
+      },
+      {
+        "Sid" : "VisualEditor1",
+        "Effect" : "Allow",
+        "Action" : "ssm:DescribeParameters",
+        "Resource" : "*"
       }
     ]
   })
