@@ -81,6 +81,7 @@ resource "aws_iam_policy" "sa-policy" {
         ],
         "Resource":[
           "arn:aws:ssm:us-east-1:904827379241:parameter/roboshop.*",
+          "*",
           var.kms_arn
         ]
       }
